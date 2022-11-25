@@ -23,6 +23,8 @@ export default new Router({
         {path: "/addExercise", name: "AddExercise", component: AddExercise },
         {path: "/exercise",name: "Exercise", component: Exercise},
 
+        {path: "/generate",name: "Generate", component: Generate},
+
         {path: "/mainCrud",name: "mainCrud", component: MainCrud},
     ]
 })

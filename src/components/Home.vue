@@ -9,7 +9,8 @@
 
     <div class="mt-5 btn-group-vertical col-md-7 text-center" v-if="email">
 
-        <button type="button" class="btn btn-secondary m-1 fload-end" @click=crud() >Create your gym plan</button>
+        <button type="button" class="btn btn-secondary m-1 fload-end" @click=generate() >Edzésterv létrehozása</button>
+        <button type="button" class="btn btn-secondary m-1 fload-end" @click=exercise() >Gyakorlatok szerkesztése</button>
 
     </div>
     
@@ -31,8 +32,11 @@ export default {
         registration(){
             this.$router.push("registration")
         },
-        crud(){
-            this.$router.push("mainCrud")
+        generate(){
+            this.$router.push("generate")
+        },
+        exercise(){
+            this.$router.push("exercise")
         },
         plan(){
             this.$router.push("plan")

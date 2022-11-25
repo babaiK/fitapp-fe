@@ -54,11 +54,7 @@ export default {
             this.$store.dispatch('email', response.data.email);
             //visszadob az home-ba
             this.$router.push('/');
-
-
-
-
-           
+  
         }
     }
 }

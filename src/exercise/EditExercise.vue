@@ -23,7 +23,7 @@ export default {
     return {
       id: null,
       name: "",
-      muscleGroupId: ""
+      muscleGroupId: null
       
     };
   },
