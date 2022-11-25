@@ -5,13 +5,13 @@
     <h3 class="py-4"> Registration </h3>
 
     <div class="form-group text-md-left">
-        <label> Name </label>
-        <input type="name" class="form-control" v-model="name" placeholder="Name" />
+        <label> firstName </label>
+        <input type="firstName" class="form-control" v-model="firstName" placeholder="firstName" />
     </div>
 
     <div class="form-group text-md-left">
-        <label> Username </label>
-        <input type="username" class="form-control" v-model="username" placeholder="Username" />
+        <label> lastName </label>
+        <input type="lastName" class="form-control" v-model="lastName" placeholder="lastName" />
     </div>
 
     <div class="form-group text-md-left">
@@ -26,12 +26,10 @@
 
     <button class=" mt-5 btn btn-secondary btn-block" @click=handleSubmit()>Registration </button>
 
-    <!--<button class=" mt-2 btn btn-secondary btn-block" @click=goBack()>Back </button>-->
-
 
 </div>
     
-</form>
+</form> 
 
 </template>
 
@@ -42,8 +40,8 @@ export default {
     name: 'Registration',
     data(){
         return {
-            name: '',
-            username: '',
+            firstName: '',
+            lastName: '',
             email: '',
             password: '',
            
@@ -51,41 +49,16 @@ export default {
     },
     methods:{
         async handleSubmit(){
-
-            /*const data = {
-                name: this.name,
-                username: this.username,
-                email: this.email,
-                password: this.password,
-                
-            };
-            //így megjelenik a szöveg, nem frissíti folyamat az oldalt
-            //e.preventDefault();
-            //console.log(data);
-             axios.post('api/auth/signup', data)
-            .then(
-                res => {
-                    console.log(res)
-                } 
-            ).catch(
-                err => {
-                    console.log(err)
-                }
-            )*/
-
            
-            await axios.post('api/auth/signup', {
-                    name: this.name,
-                    username: this.username,
+            await axios.post('auth/registration', {
+                firstName: this.firstName,
+                lastName: this.lastName,
                     email: this.email,
                     password: this.password
                 
             });
 
-            //console.log(response);
-
             this.$router.push('/login');
-
            
         },
          goBack(){

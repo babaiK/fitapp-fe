@@ -4,27 +4,27 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-    username: null
+    email: null
 };
 
 const store = new Vuex.Store({
     state,
     //forgetting the current state value:
     getters: {
-        username: (state) => {
-            return state.username;
+        email: (state) => {
+            return state.email;
         }
     },
     //changing the value of the state:
     actions: {
-        username(context, username){
-            context.commit('username', username);
+        email(context, email){
+            context.commit('email', email);
         }
     },
     //changed on the mutations: before actions
     mutations: {
-        username(state, username){
-            state.username = username;
+        email(state, email){
+            state.email = email;
         }
     }
 

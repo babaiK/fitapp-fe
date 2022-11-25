@@ -5,8 +5,8 @@
 
         <h3 class="py-4"> Login </h3>
         <div class="form-group mt-3 text-md-left">
-            <label > Username </label>
-            <input type="username" class="form-control" v-model="username" placeholder="Username" />
+            <label > email </label>
+            <input type="email" class="form-control" v-model="email" placeholder="email" />
         </div>
 
         <div class="form-group text-md-left">
@@ -21,14 +21,6 @@
 
     </div>
 
-    
-    
-    
-
-    <!-- <p class="forgot-password text-right">
-        <router-link to="forgot"> Forgot Password </router-link>
-       
-    </p>-->
 </form>
 
 </template>
@@ -41,25 +33,25 @@ export default {
     name: 'Login',
     data(){
         return {
-            username: '',
+            email: '',
             password: '',
            
         }
     },
     methods:{
         async handleSubmit(){
-            const response = await axios.post('api/auth/signin', {
-                username: this.username,                
+            const response = await axios.post('auth/login', {
+                email: this.email,                
                 password: this.password
                 
             });
 
-            localStorage.setItem('username',response.data.username);
+            localStorage.setItem('email',response.data.email);
             localStorage.setItem('password',response.data.password);
 
             console.log(response);
             
-            this.$store.dispatch('username', response.data.username);
+            this.$store.dispatch('email', response.data.email);
             //visszadob az home-ba
             this.$router.push('/');
 

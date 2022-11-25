@@ -4,11 +4,11 @@
 
       <div class="container"> 
 
-        <router-link to="/" class="navbar-brand"> Foody </router-link>
+        <router-link to="/" class="navbar-brand"> FITT-APP </router-link>
 
         <div class="collapse navbar-collapse">
 
-          <ul class="navbar-nav ml-auto" v-if="username">
+          <ul class="navbar-nav ml-auto" v-if="email">
 
             <li class="nav-item">
               <a href="javascript:void(0)" @click="handleClick" class="nav-link">Logout</a>
@@ -32,16 +32,16 @@ export default {
     
     methods: {
       handleClick(){
-        localStorage.removeItem('username');
+        localStorage.removeItem('email');
         localStorage.removeItem('password');
 
-        this.$store.dispatch('username', null);
+        this.$store.dispatch('email', null);
         
-        this.$router.push('/').catch(err => {});
+        this.$router.push('/').catch(() => {});
       }
     },
     computed: {
-      ...mapGetters(['username'])
+      ...mapGetters(['email'])
     }
 }
 </script>

@@ -7,7 +7,7 @@ module.exports = defineConfig({
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({
-        process: "process/browser",
+        //process: "process/browser",
         Buffer: ["buffer", "Buffer"],
       }),
     ],
@@ -15,4 +15,5 @@ module.exports = defineConfig({
   devServer: {
     proxy: 'http://localhost:8080/',
 }
+
 })
