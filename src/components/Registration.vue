@@ -2,29 +2,29 @@
 <form class="mt-5" @submit.prevent="handleSubmit">
 
 <div class="container my-4 text-center ">
-    <h3 class="py-4"> Registration </h3>
+    <h3 class="py-4"> Regisztráció </h3>
 
     <div class="form-group text-md-left">
-        <label> firstName </label>
+        <label> Vezetéknév </label>
         <input type="firstName" class="form-control" v-model="firstName" placeholder="firstName" />
     </div>
 
     <div class="form-group text-md-left">
-        <label> lastName </label>
+        <label> Keresztnév </label>
         <input type="lastName" class="form-control" v-model="lastName" placeholder="lastName" />
     </div>
 
     <div class="form-group text-md-left">
-        <label> Email </label>
+        <label> E-mail cím </label>
         <input type="email" class="form-control" v-model="email" placeholder="Email" />
     </div>
 
     <div class="form-group text-md-left">
-        <label> Password </label>
+        <label> Jelszó </label>
         <input type="password" class="form-control" v-model="password" placeholder="Password" />
     </div>    
 
-    <button class=" mt-5 btn btn-secondary btn-block" @click=handleSubmit()>Registration </button>
+    <button class=" mt-5 btn btn-outline-success btn-block" @click=handleSubmit()>Registration </button>
 
 
 </div>

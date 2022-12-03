@@ -1,17 +1,17 @@
 <template>
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top py-0">
+  <nav class="navbar navbar-expand navbar-dark bg-success fixed-top py-0">
 
       <div class="container"> 
 
-        <router-link to="/" class="navbar-brand"> FITT-APP </router-link>
+        <router-link to="/" class="navbar-brand"> fitapp </router-link>
 
         <div class="collapse navbar-collapse">
 
           <ul class="navbar-nav ml-auto" v-if="email">
 
             <li class="nav-item">
-              <a href="javascript:void(0)" @click="handleClick" class="nav-link">Logout</a>
+              <a href="javascript:void(0)" @click="handleClick" class="nav-link">Kijelentkezés</a>
             </li>       
             
           </ul>         

@@ -3,13 +3,11 @@
 
   <div class="mt-5">
 
-  <button type="button" class="btn btn-secondary m-1 fload-end" id="show-modal" @click=addPage() >Új gyakorlat hozzáadása</button>  
-  <button type="button" class="btn btn-secondary m-1 fload-end" @click=goBack()>Vissza</button>
+  <button type="button" class="btn btn-outline-success m-1 fload-end" id="show-modal" @click=addPage() >Új gyakorlat hozzáadása</button>  
+  <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
  
-  
-
    <table class="table table-striped mt-3">
-        <thead class="thead-dark">
+        <thead>
             <tr>                
                 <th>
                     Gyakorlat 
@@ -18,12 +16,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="exercise in exercise" v-bind:key = "exercise.id">
+            <tr v-for="(exercise, index) in exercise.slice().reverse()" v-bind:key = "exercise.id">
                 <!--<td>{{exercise.id}}</td>--><!-- id oszlop -->
+                <td>{{index+1}}.</td>
                 <td>{{exercise.name}}</td>
                 <td>
-                    <button type="button" class="btn btn-light mr-1" @click="edit(exercise.id)">Szerkesztés</button>
-                     <button type="button" class="btn btn-light mr-1" @click="deleteExercise(exercise.id)">Törlés</button>
+                    <button type="button" class="btn btn-outline-primary mr-1" @click="edit(exercise.id)">Szerkesztés</button>
+                     <button type="button" class="btn btn-outline-danger mr-1" @click="deleteExercise(exercise.id)">Törlés</button>
                 </td>               
 
             </tr>

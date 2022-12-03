@@ -9,6 +9,10 @@ import AddExercise from './exercise/AddExercise.vue';
 import EditExercise from './exercise/EditExercise.vue';
 
 import MainCrud from './components/MainCrud.vue';
+import Generate from './generate/Generate.vue';
+import Ppl from './generate/Ppl.vue';
+import Ublb from './generate/Ublb.vue';
+import Bs from './generate/Bs.vue';
 
 Vue.use(Router);
 
@@ -24,7 +28,11 @@ export default new Router({
         {path: "/exercise",name: "Exercise", component: Exercise},
 
         {path: "/generate",name: "Generate", component: Generate},
+        {path: "/ppl",name: "Ppl", component: Ppl},
+        {path: "/ublb",name: "Ublb", component: Ublb},
+        {path: "/bs",name: "Bs", component: Bs},
 
         {path: "/mainCrud",name: "mainCrud", component: MainCrud},
+        
     ]
 })

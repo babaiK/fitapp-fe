@@ -1,11 +1,23 @@
 <template>
   <div class="mt-5">
-    <b-card title="Add new">
-      <b-form-input class="mb-2" v-model="name" placeholder="Enter name"></b-form-input>
+    <b-card title="Gyakorlat hozzáadása">
+      <b-form-input class="mb-2" v-model="name" placeholder="A gyakorlat neve"></b-form-input>
+      <select required class="mb-2 form-control" v-model="muscleGroupId">
+        <option value="" disabled seleced hidden>Válassz egy izomcsoportot!</option>
+        <option value="2">Mell</option>
+        <option value="3">Hát</option>
+        <option value="4">Elülső váll</option>
+        <option value="5">Oldalsó váll</option>
+        <option value="6">Hátsó váll</option>
+        <option value="7">Bicepsz</option>
+        <option value="8">Tricepsz</option>
+        <option value="9">Comb</option>
+        <option value="1">Vádli</option>
+      </select>
 
       <br/>
-      <button  class="btn btn-secondary m-1 fload-end" type="button" variant="success" @click="save">Save</button>
-      <button  class="btn btn-secondary m-1 fload-end" type="button"  @click=goBack()>Back</button>
+      <button  class="btn btn-outline-primary m-1 fload-end" type="button" variant="success" @click="save">Mentés</button>
+      <button  class="btn btn-outline-warning m-1 fload-end" type="button"  @click=goBack()>Vissza</button>
     </b-card>
   </div>
 </template>
@@ -16,7 +28,7 @@ export default {
   data() {
     return {
       name: "",
-      muscleGroupId:1      
+      muscleGroupId:""      
       
     };
   },

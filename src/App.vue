@@ -1,9 +1,26 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link>      
-    </nav>
-    <router-view/>
+    <!--<Nav :username ="username"/>--> 
+    <Nav/>
+
+    <div class="auth-wrapper">
+        <div class="auth-inner">
+          
+            <router-view />
+        </div>
+    </div>
   </div>
+
 </template>
+
+<script>
+import Nav from './components/Nav.vue'
+import axios from 'axios';
+export default {
+  name: 'App',
+  components:{
+    Nav    
+  }
+}
+</script>
 
