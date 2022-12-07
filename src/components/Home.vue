@@ -11,7 +11,7 @@
 
         <button type="button" class="btn btn-outline-success m-1 fload-end" @click=generate() >Edzésterv létrehozása</button>
         <button type="button" class="btn btn-outline-success m-1 fload-end" @click=exercise() >Gyakorlatok szerkesztése</button>
-
+        <button type="button" class="btn btn-success m-1 fload-end" @click=allplan() >Összes edzésterv</button>
     </div>
     
 </div>
@@ -38,8 +38,8 @@ export default {
         exercise(){
             this.$router.push("exercise")
         },
-        plan(){
-            this.$router.push("plan")
+        allplan(){
+            this.$router.push("allplan")
         }
     }
     

@@ -8,7 +8,7 @@
 
 
  <table class="table table-striped mt-3">
-      <thead class="thead-dark">
+      <thead>
           <tr>                
               <th>
                   Gyakorlat 
@@ -17,20 +17,21 @@
           </tr>
       </thead>
       <tbody>
-          <tr v-for="ppl in ppl.slice().reverse()" v-bind:key = "ppl.id">
+          <tr v-for="(ppl, i) in ppl.slice().reverse()" v-bind:key = "ppl.id">
               <!--<td>{{exercise.id}}</td>--><!-- id oszlop -->
+              <td>{{(i+1)}}. nap</td>
               <td>{{ppl.ex1}}</td>
               <td>{{ppl.ex2}}</td>
               <td>{{ppl.ex3}}</td>
               <td>{{ppl.ex4}}</td>
               <td>{{ppl.ex5}}</td>
               <td>{{ppl.ex6}}</td>
-                           
-
           </tr>
       </tbody>
   </table>
-  </div>
+  <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
+ 
+  </div>  
 </template>
 <script>
 import axios from 'axios';

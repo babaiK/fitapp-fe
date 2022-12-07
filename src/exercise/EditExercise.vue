@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5">
-    <b-card :title="'Edit with id of ' + id">
+    <b-card :title="id + '. gyakorlat szerkesztése'">
 
       <b-form-input class="mb-2" v-model="name" placeholder="Enter name"></b-form-input>
       <b-form-input class="mb-2" v-model="muscleGroupId" placeholder="Enter muscleGroupId"></b-form-input>
@@ -17,13 +17,11 @@
  
 import axios from 'axios';
 export default {
-  
-
   data() {
     return {
       id: null,
       name: "",
-      muscleGroupId: null
+      muscleGroupId: ""
       
     };
   },
@@ -37,23 +35,25 @@ export default {
       const email = localStorage.getItem('email');
       const password = localStorage.getItem('password');
       const token = Buffer.from(`${email}:${password}`, 'utf8').toString('base64');
+      console.log("get by id-ba benne vagyunk")
+      
 
       axios.get("exercise/" + this.id, {
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': 'Basic '+token
+              'Authorization': 'Basic '+ token
              }            
         })
         .then((response) => {
 
           console.log(response);
-
+          //this.id = response.data.id;
           this.name = response.data.name;
           this.muscleGroupId = response.data.muscleGroupId
           
         })
         .catch(() => {
-          alert("failed");
+          alert("get by id fail");
         });
     },
     save() {
@@ -67,6 +67,7 @@ export default {
         muscleGroupId: this.muscleGroupId
        
       }
+      console.log("ez már az update metodus");
 
       axios.put("exercise/update/" + this.id,params,
          {

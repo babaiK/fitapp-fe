@@ -8,28 +8,29 @@
   
   
    <table class="table table-striped mt-3">
-        <thead class="thead-dark">
+        <thead>
             <tr>                
                 <th>
-                    Gyakorlat 
+                    <h4>Bro split</h4> 
                 </th>               
                 <th></th>                
             </tr>
         </thead>
         <tbody>
-            <tr v-for="bs in bs.slice().reverse()" v-bind:key = "bs.id">
+            <tr v-for="(bs, i) in bs.slice().reverse()" v-bind:key = "bs.id">
                 <!--<td>{{exercise.id}}</td>--><!-- id oszlop -->
+                <td>{{i+1}}. nap</td>
                 <td>{{bs.ex1}}</td>
                 <td>{{bs.ex2}}</td>
                 <td>{{bs.ex3}}</td>
                 <td>{{bs.ex4}}</td>
                 <td>{{bs.ex5}}</td>
                 <td>{{bs.ex6}}</td>
-                             
-  
             </tr>
         </tbody>
     </table>
+    <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
+ 
     </div>
   </template>
   <script>

@@ -17,19 +17,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="ublb in ublb.slice().reverse()" v-bind:key = "ublb.id">
+            <tr v-for="(ublb, i) in ublb.slice().reverse()" v-bind:key = "ublb.id">
                 <!--<td>{{exercise.id}}</td>--><!-- id oszlop -->
+                <td>{{(i+1)}}</td>
                 <td>{{ublb.ex1}}</td>
                 <td>{{ublb.ex2}}</td>
                 <td>{{ublb.ex3}}</td>
                 <td>{{ublb.ex4}}</td>
                 <td>{{ublb.ex5}}</td>
                 <td>{{ublb.ex6}}</td>
-                             
-  
             </tr>
         </tbody>
     </table>
+    <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
+ 
     </div>
   </template>
   <script>
