@@ -3,21 +3,19 @@
     
     <div class="container my-4 text-center ">
 
-        <h3 class="py-4"> Bejelentkezés </h3>
+        <h3> Bejelentkezés </h3>
         <div class="form-group mt-3 text-md-left">
             <label > E-mail cím </label>
-            <input type="email" class="form-control" v-model="email" placeholder="email" />
+            <input type="email" class="form-control" v-model="email" placeholder="E-mail cím" />
         </div>
 
         <div class="form-group text-md-left">
             <label> Jelszó </label>
-            <input type="password" class="form-control" v-model="password" placeholder="Password" />
+            <input type="password" class="form-control" v-model="password" placeholder="Jelszó" />
         </div>
 
-        
-        <button class="mt-5 btn btn-outline-success btn-block">Login </button>
-        
-        
+        <button type="button" class="btn btn-outline-success m-1 fload-end" @click=handleSubmit()>Bejelentkezés</button>
+        <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
 
     </div>
 
@@ -34,8 +32,7 @@ export default {
     data(){
         return {
             email: '',
-            password: '',
-           
+            password: ''           
         }
     },
     methods:{
@@ -52,9 +49,12 @@ export default {
             console.log(response);
             
             this.$store.dispatch('email', response.data.email);
-            //visszadob az home-ba
+        
             this.$router.push('/');
   
+        },
+        goBack(){
+            this.$router.push('/');
         }
     }
 }

@@ -1,17 +1,11 @@
 <template>
-    <div class="mt-5">
-     <!--
-  
-  <button type="button" class="btn btn-secondary m-1 fload-end" id="show-modal" @click=addPage() >Új gyakorlat hozzáadása</button>  
-  <button type="button" class="btn btn-secondary m-1 fload-end" @click=goBack()>Vissza</button>
-  --> 
-  
+  <div class="mt-5">
   
    <table class="table table-striped mt-3">
         <thead>
             <tr>                
                 <th>
-                    <h4>Bro split</h4> 
+                    Bro split edzésterv 
                 </th>               
                 <th></th>                
             </tr>
@@ -31,9 +25,9 @@
     </table>
     <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
  
-    </div>
-  </template>
-  <script>
+  </div>
+</template>
+<script>
   import axios from 'axios';
   export default {
     data() {
@@ -67,4 +61,4 @@
           }
     },
   };
-  </script>
+</script>

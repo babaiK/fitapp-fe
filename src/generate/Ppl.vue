@@ -11,7 +11,7 @@
       <thead>
           <tr>                
               <th>
-                  Gyakorlat 
+                  Push Pull Leg edzésterv 
               </th>               
               <th></th>                
           </tr>

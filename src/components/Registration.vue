@@ -6,25 +6,26 @@
 
     <div class="form-group text-md-left">
         <label> Vezetéknév </label>
-        <input type="firstName" class="form-control" v-model="firstName" placeholder="firstName" />
+        <input type="firstName" class="form-control" v-model="firstName" placeholder="Vezetéknév" />
     </div>
 
     <div class="form-group text-md-left">
         <label> Keresztnév </label>
-        <input type="lastName" class="form-control" v-model="lastName" placeholder="lastName" />
+        <input type="lastName" class="form-control" v-model="lastName" placeholder="Keresztnév" />
     </div>
 
     <div class="form-group text-md-left">
         <label> E-mail cím </label>
-        <input type="email" class="form-control" v-model="email" placeholder="Email" />
+        <input type="email" class="form-control" v-model="email" placeholder="E-mail cím" />
     </div>
 
     <div class="form-group text-md-left">
         <label> Jelszó </label>
-        <input type="password" class="form-control" v-model="password" placeholder="Password" />
+        <input type="password" class="form-control" v-model="password" placeholder="Jelszó" />
     </div>    
 
-    <button class=" mt-5 btn btn-outline-success btn-block" @click=handleSubmit()>Registration </button>
+    <button type="button" class="btn btn-outline-success m-1 fload-end" @click=handleSubmit()>Regisztráció</button>
+    <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
 
 
 </div>
@@ -53,11 +54,11 @@ export default {
             await axios.post('auth/registration', {
                 firstName: this.firstName,
                 lastName: this.lastName,
-                    email: this.email,
-                    password: this.password
+                email: this.email,
+                password: this.password
                 
             });
-
+            alert("Sikeres regisztráció!");
             this.$router.push('/login');
            
         },

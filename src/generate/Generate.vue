@@ -1,6 +1,6 @@
 <template>
 <div class="container my-4 text-center">
-    <div class="mt-5 btn-group-vertical col-md-7 text-center">  
+    <div class="mt-5 btn-group-vertical col-md-3 text-center">  
         <button type="button" class="btn btn-outline-success m-1 fload-end" id="show-modal" @click=ppl() >Push Pull Leg</button>  
         <button type="button" class="btn btn-outline-success m-1 fload-end" id="show-modal" @click=ublb() >Felsőtest - Alsótest</button> 
         <button type="button" class="btn btn-outline-success m-1 fload-end" id="show-modal" @click=bs() >Bro Split</button>  

@@ -1,12 +1,7 @@
 <template>
     <div class="mt-5">
-     <!--
-  
-  <button type="button" class="btn btn-secondary m-1 fload-end" id="show-modal" @click=addPage() >Új gyakorlat hozzáadása</button>  
-  <button type="button" class="btn btn-secondary m-1 fload-end" @click=goBack()>Vissza</button>
-  --> 
-  
-  
+      <button type="button" class="btn btn-outline-warning m-1 fload-end" @click=goBack()>Vissza</button>
+       
     <table class="table table-striped mt-3">
             <tbody v-for="(allplan, index) in allplan.slice().reverse()" v-bind:key = "allplan.id">
 

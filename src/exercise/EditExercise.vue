@@ -2,13 +2,24 @@
   <div class="mt-5">
     <b-card :title="id + '. gyakorlat szerkesztése'">
 
-      <b-form-input class="mb-2" v-model="name" placeholder="Enter name"></b-form-input>
-      <b-form-input class="mb-2" v-model="muscleGroupId" placeholder="Enter muscleGroupId"></b-form-input>
+      <b-form-input class="mb-2" v-model="name" placeholder="A gyakorlat neve"></b-form-input>
+      <select required class="mb-2 form-control" v-model="muscleGroupId">
+        <option value="" disabled seleced hidden>Válassz egy izomcsoportot!</option>
+        <option value="2">Mell</option>
+        <option value="3">Hát</option>
+        <option value="4">Elülső váll</option>
+        <option value="5">Oldalsó váll</option>
+        <option value="6">Hátsó váll</option>
+        <option value="7">Bicepsz</option>
+        <option value="8">Tricepsz</option>
+        <option value="9">Comb</option>
+        <option value="1">Vádli</option>
+      </select>
 
       <br/> 
 
-      <button  class="btn btn-secondary m-1 fload-end" type="button" variant="success" @click="save">Save</button>
-      <button  class="btn btn-secondary m-1 fload-end" type="button"  @click=goBack()>Back</button>
+      <button type="button" class="btn btn-outline-success m-1 fload-end" @click="save">Mentés</button>
+      <button type="button" class="btn btn-outline-warning m-1 fload-end"  @click=goBack()>Vissza</button>
     </b-card>
   </div>
 </template>
@@ -53,7 +64,7 @@ export default {
           
         })
         .catch(() => {
-          alert("get by id fail");
+          alert("Hiba: nem létező azonosító");
         });
     },
     save() {
@@ -77,11 +88,11 @@ export default {
              }            
         })
         .then(() => {
-          alert("success");
+          alert("A gyakorlat sikeresen módosítva!");
           this.$router.push("/exercise");
         })
         .catch(() => {
-          alert("failed");
+          alert("Hiba");
         });
     },
     goBack(){

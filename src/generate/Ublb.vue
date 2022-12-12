@@ -8,10 +8,10 @@
   
   
    <table class="table table-striped mt-3">
-        <thead class="thead-dark">
+        <thead>
             <tr>                
                 <th>
-                    Gyakorlat 
+                    Felsőtest - Alsótest edzésterv 
                 </th>               
                 <th></th>                
             </tr>
