@@ -1,4 +1,4 @@
-# faszkalap
+# fitapp-fe
 
 ## Project setup
 ```
